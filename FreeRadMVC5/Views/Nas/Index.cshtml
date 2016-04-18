@@ -1,0 +1,75 @@
+﻿@model IEnumerable<FreeRadMVC5.ViewModels.NasViewModel>
+
+@{
+    ViewBag.Title = "Устройства";
+}
+
+<h2>Устройства</h2>
+
+<br />
+
+<table class="table">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.NasName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ports)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Secret)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Community)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NasName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ports)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Secret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Community)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    <div class="row">
+        <p>
+            @Html.ActionLink("Создать", "Create", null, new { @class = "btn btn-success" })
+        </p>
+    </div>
+</div>

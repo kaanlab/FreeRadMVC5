@@ -1,0 +1,61 @@
+﻿@model FreeRadMVC5.Models.UserAttribute
+
+@{
+    ViewBag.Title = "Удаление доп. атрибутов";
+}
+
+<h2>Удалить</h2>
+
+<div>
+    <h4>доп. атрибуты</h4>
+    <hr />
+    <div class="alert alert-danger" role="alert">
+        Вы уверенны, что хотите удалить дополнительные атрибуты пользователя "<b>@Html.DisplayFor(model => model.UserName)</b>"?
+    </div>
+    <div class="well">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Attribute)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Attribute)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Op)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Op)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Value)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Value)
+            </dd>
+
+        </dl>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-danger" /> |
+            @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

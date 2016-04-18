@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FreeRadMVC5.ViewModels.GroupViewModel>
+
+@{
+    ViewBag.Title = "Группы";
+}
+
+<h2>Группы</h2>
+
+<br />
+
+<table class="table">
+    <tr class="warning">
+        <th>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attribute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Op)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attribute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Op)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = " btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    <div class="row">
+        <p>
+            @Html.ActionLink("Создать", "Create", null, new { @class = "btn btn-success" })
+        </p>
+        <p>
+            @Html.ActionLink("Доп. атрибуты", "Index", "GroupAttribute", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+</div>

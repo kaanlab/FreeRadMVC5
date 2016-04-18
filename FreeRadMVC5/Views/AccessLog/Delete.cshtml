@@ -1,0 +1,213 @@
+﻿@model FreeRadMVC5.Models.AccessLog
+
+@{
+    ViewBag.Title = "Удаление логов";
+}
+
+<h2>Удалить</h2>
+
+<div>
+    <h4>событие </h4>
+    <hr />
+    <div class="alert alert-danger" role="alert">
+        Вы уверенны, что хотите удалить событие "<b>@Html.DisplayFor(model => model.AcctSessionId)</b>"?
+    </div>
+    <div class="well">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.RadAcctId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RadAcctId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctSessionId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctSessionId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctUniqueId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctUniqueId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+             <dt>
+                @Html.DisplayNameFor(model => model.GroupName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GroupName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Realm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Realm)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NasIpAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NasIpAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NasPortId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NasPortId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NasPortType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NasPortType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctStartTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctStartTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctStopTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctStopTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctSessionTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctSessionTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctAuthentic)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctAuthentic)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ConnectInfo_start)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ConnectInfo_start)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ConnectInfo_stop)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ConnectInfo_stop)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctInputOctets)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctInputOctets)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctOutputOctets)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctOutputOctets)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CalledStationId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CalledStationId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CallingStationId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CallingStationId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AcctTerminateCause)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AcctTerminateCause)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ServiceType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FramedProtocol)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FramedProtocol)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FramedIpAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FramedIpAddress)
+            </dd>        
+
+        </dl>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-danger" /> |
+            @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

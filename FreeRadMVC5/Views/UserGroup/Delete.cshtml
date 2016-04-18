@@ -1,0 +1,53 @@
+﻿@model FreeRadMVC5.Models.UserGroup
+
+@{
+    ViewBag.Title = "Удаление пользователя из группы";
+}
+
+<h2>Удаление</h2>
+
+<div>
+    <h4>пользователя из группы</h4>
+    <hr />
+    <div class="alert alert-danger" role="alert">
+        Вы уверенны, что хотите удалить пользователя "<b>@Html.DisplayFor(model => model.UserName)</b>" из группы?
+    </div>
+    <div class="well">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GroupName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GroupName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Priority)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Priority)
+            </dd>
+
+        </dl>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-danger" /> |
+            @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

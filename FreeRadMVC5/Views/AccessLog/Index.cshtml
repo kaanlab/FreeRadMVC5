@@ -1,0 +1,136 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model PagedList<FreeRadMVC5.Models.AccessLog>
+
+
+@{
+    ViewBag.Title = "События";
+}
+
+<h2>События</h2>
+
+
+<table class="table table-condensed" id="access-log">
+    <tr class="active">
+        <th>
+            @Html.DisplayNameFor(model => model.AcctSessionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctUniqueId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NasIpAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctStartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctStopTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctSessionTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctAuthentic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConnectInfo_start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConnectInfo_stop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctInputOctets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctOutputOctets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalledStationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallingStationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctTerminateCause)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctSessionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctUniqueId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NasIpAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctStopTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctSessionTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctAuthentic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConnectInfo_start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConnectInfo_stop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctInputOctets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctOutputOctets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalledStationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CallingStationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctTerminateCause)
+            </td>
+            <td>
+                @Html.ActionLink("Удалить", "Delete", new { id = item.RadAcctId }, new { @class = " btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<nav>
+    @Html.Pager(Model).Options(o =>
+{
+    o.SetCssClass("pagination pagination-lg");
+    o.SetContainerTagName("ul");
+    o.SetPagerItemTemplate("<li class=\"morepages\"><span>{0}<span class=\"sr-only\"></span></span></li>");
+    o.SetCurrentPagerItemTemplate("<li class=\"morepages active\"><span>{0}<span class=\"sr-only\"></span></span></li>");
+    o.SetFirstPageText("Первая");
+    o.SetPrevPageText("<");
+    o.SetNextPageText(">");
+    o.SetLastPageText("Последняя");
+})
+</nav>
